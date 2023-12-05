@@ -1,0 +1,309 @@
+#: import random random
+
+WindowManager:
+    MainWindow:
+    RecipeWindow:
+    HistoryWindow:
+    PaintWindow:
+    TheoryWindow:
+
+<MainWindow>:
+    name: 'main_window'
+    BoxLayout:
+        id: main_boxlayout
+        orientation: 'vertical'
+        padding: 10
+        spacing: 5
+        GridLayout:
+            spacing: 5
+            orientation: 'lr-tb'
+            cols: 2
+            ImageButton:
+                id: main_recipe_btn
+                source: 'MainWindow/1.jpg'
+                allow_stretch: True
+                keep_ratio: False
+                size: self.size
+                on_release:
+                    app.root.current = 'recipe_window'
+                    root.manager.transition.direction = 'left'
+            ImageButton:
+                id: main_history
+                source: 'MainWindow/3.jpg'
+                allow_stretch: True
+                keep_ratio: False
+                size: self.size
+                on_release:
+                    app.root.current = 'history_window'
+                    root.manager.transition.direction = 'left'
+            ImageButton:
+                id: main_theory
+                source: 'MainWindow/2.jpg'
+                allow_stretch: True
+                keep_ratio: False
+                size: self.size
+                on_release:
+                    app.root.current = 'theory_window'
+                    root.manager.transition.direction = 'left'
+            ImageButton:
+                id: main_fingerpainting_btn
+                source: 'MainWindow/4.jpg'
+                allow_stretch: True
+                keep_ratio: False
+                size: self.size
+                on_release:
+                    app.root.current = 'paint_window'
+                    root.manager.transition.direction = 'left'
+        Button:
+            id: exit_btn
+            size_hint_y: None
+            height: 40
+            size: self.size
+            text: 'Выход'
+            font_size: '20sp'
+            on_release: exit()
+
+<RecipeWindow>:
+    name: 'recipe_window'
+
+    Button:
+        spacing: 5
+        id: numeros_back
+        text: 'Назад'
+        size_hint_y: None
+        height: 40
+        font_size: '20sp'
+        on_release:
+            app.root.current = 'main_window'
+            root.manager.transition.direction = 'right'
+
+<HistoryWindow>:
+    name: 'history_window'
+    BoxLayout:
+        cols: 2
+        orientation: 'vertical'
+        spacing: 5
+        padding: 5
+        GridLayout:
+            cols: 4
+            orientation: 'lr-tb'
+            spacing: 5
+
+            ImageButton:
+                id: vitamin_C
+                source: 'HistoryWindow/img/8.jpg'
+                size: self.size
+                font_size: 20
+                bold: True
+                on_release:
+                    root.audio_vitamin_C()
+
+            ImageButton:
+                id: vitamin_A
+                source: 'HistoryWindow/img/7.jpg'
+                size: self.size
+                font_size: 20
+                bold: True
+                on_release:
+                    root.audio_vitamin_A()
+
+            ImageButton:
+                id: vitamin_B12
+                source: 'HistoryWindow/img/6.jpg'
+                size: self.size
+                font_size: 20
+                bold: True
+                on_release:
+                    root.audio_vitamin_B12()
+
+            ImageButton:
+                id: vitamin_D3
+                source: 'HistoryWindow/img/5.jpg'
+                size: self.size
+                font_size: 20
+                bold: True
+                on_release:
+                    root.audio_vitamin_D3()
+
+            ImageButton:
+                id: vitamin_E
+                source: 'HistoryWindow/img/4.jpg'
+                size: self.size
+                font_size: 20
+                bold: True
+                on_release:
+                    root.audio_vitamin_E()
+
+            ImageButton:
+                id: vitamin_k
+                source: 'HistoryWindow/img/3.jpg'
+                size: self.size
+                font_size: 20
+                bold: True
+                on_release:
+                    root.audio_vitamin_k()
+
+            ImageButton:
+                id: vitamin_b6
+                source: 'HistoryWindow/img/2.jpg'
+                size: self.size
+                font_size: 20
+                bold: True
+                on_release:
+                    root.audio_vitamin_b6()
+
+            ImageButton:
+                id: vitamin_pp
+                source: 'HistoryWindow/img/1.jpg'
+                size: self.size
+                font_size: 20
+                bold: True
+                on_release:
+                    root.audio_vitamin_pp()
+        Button:
+            id: colores_back
+            size_hint_y: None
+            size: self.size
+            text: 'Назад'
+            height: 40
+            font_size: '20sp'
+            on_release:
+                app.root.current = 'main_window'
+                root.manager.transition.direction = 'right'
+
+<TheoryWindow>:
+    name: 'theory_window'
+    BoxLayout:
+        cols: 2
+        orientation: 'vertical'
+        spacing: 5
+        padding: 5
+        GridLayout:
+            cols: 4
+            orientation: 'lr-tb'
+            spacing: 5
+            ImageButton:
+                id: vitamin_C
+                source: 'HistoryWindow/img/8.jpg'
+                size: self.size
+                font_size: 20
+                bold: True
+                on_release:
+                    root.audio_vitamin_C()
+
+            ImageButton:
+                id: vitamin_A
+                source: 'HistoryWindow/img/7.jpg'
+                size: self.size
+                font_size: 20
+                bold: True
+                on_release:
+                    root.audio_vitamin_A()
+
+            ImageButton:
+                id: vitamin_B12
+                source: 'HistoryWindow/img/6.jpg'
+                size: self.size
+                font_size: 20
+                bold: True
+                on_release:
+                    root.audio_vitamin_B12()
+
+            ImageButton:
+                id: vitamin_D3
+                source: 'HistoryWindow/img/5.jpg'
+                size: self.size
+                font_size: 20
+                bold: True
+                on_release:
+                    root.audio_vitamin_D3()
+
+            ImageButton:
+                id: vitamin_E
+                source: 'HistoryWindow/img/4.jpg'
+                size: self.size
+                font_size: 20
+                bold: True
+                on_release:
+                    root.audio_vitamin_E()
+
+            ImageButton:
+                id: vitamin_k
+                source: 'HistoryWindow/img/3.jpg'
+                size: self.size
+                font_size: 20
+                bold: True
+                on_release:
+                    root.audio_vitamin_k()
+
+            ImageButton:
+                id: vitamin_b6
+                source: 'HistoryWindow/img/2.jpg'
+                size: self.size
+                font_size: 20
+                bold: True
+                on_release:
+                    root.audio_vitamin_b6()
+
+            ImageButton:
+                id: vitamin_pp
+                source: 'HistoryWindow/img/1.jpg'
+                size: self.size
+                font_size: 20
+                bold: True
+                on_release:
+                    root.audio_vitamin_pp()
+
+        Button:
+            id: animales_back
+            text: 'Назад'
+            size_hint_y: None
+            height: 40
+            font_size: '20sp'
+            on_release:
+                app.root.current = 'main_window'
+                root.manager.transition.direction = 'right'
+
+<PaintWindow>:
+    name: 'paint_window'
+    FloatLayout:
+        padding: 5
+        spacing: 5
+        pos: 0, 40
+        BoxLayout:
+            orientation: 'horizontal'
+            PaintWidget:
+                id: painter
+                size_hint_x: 0.8
+                canvas.before:
+                    Color:
+                        rgba: 1, 1, 1, 1
+                    Rectangle:
+                        pos: painter.pos
+                        size: painter.size
+
+    BoxLayout:
+        Button:
+            id: paint_back
+            size_hint_y: None
+            pos: 0, 0
+            height: 40
+            text: 'Назад'
+            font_size: '20sp'
+            on_release:
+                painter.clear_canvas()
+                app.root.current = 'main_window'
+                root.manager.transition.direction = 'right'
+        Button:
+            id: clear_canvas
+            size_hint_y: None
+            pos: 0, 0
+            height: 40
+            text: 'Стереть'
+            font_size: '20sp'
+            on_press:
+                painter.clear_canvas()
+
+
+<Button>:
+    background_color: 0.02, 0.89, 0.5, 1
